@@ -67,7 +67,7 @@ with columns[0]:
             {
             'selector' : 'tr:nth-child(even)',
             'props' : [('background-color', '#11B6BD')]
-            }]).hide_index().to_html(), unsafe_allow_html=True)
+            }]).to_html(), unsafe_allow_html=True)
         
 st.markdown("<hr>",unsafe_allow_html=True)
 ##############################
