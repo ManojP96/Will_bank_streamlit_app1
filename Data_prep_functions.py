@@ -109,7 +109,7 @@ def plot_actual_vs_predicted(date, y, predicted_values, model,target_column=None
             fig.add_trace(go.Scatter(x=date, y=line_values, mode='lines', name='Flag', line=dict(color='#FF5733')))
           else:
             line_values = []
-            line_values=list(pd.Timestamp(pd.Series(date)).map(lambda x: 5000000 if (x>=min_date) and (x<=max_date) else 0))
+            line_values=list(pd.to_datetime(pd.Series(date)).map(lambda x: 5000000 if (x>=min_date) and (x<=max_date) else 0))
             #st.write(line_values)
             fig.add_trace(go.Scatter(x=date, y=line_values, mode='lines', name='Flag', line=dict(color='#FF5733')))             
       # Calculate MAPE
