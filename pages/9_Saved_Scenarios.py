@@ -234,11 +234,11 @@ if auth_status == True:
         st.markdown(create_scenario_summary(selected_scenario_details).transform(transform).style.set_table_styles(
     [{
         'selector': 'th',
-        'props': [('background-color', '#15C39A')]
+        'props': [('background-color', '#11B6BD')]
     },
         {
         'selector' : 'tr:nth-child(even)',
-        'props' : [('background-color', '#15C39A4D')]
+        'props' : [('background-color', '#11B6BD')]
         }
         ]).to_html(),unsafe_allow_html=True)
         
