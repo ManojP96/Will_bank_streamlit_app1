@@ -30,7 +30,7 @@ from utilities import (set_header,
 import seaborn as sns
 import matplotlib.pyplot as plt
 import sweetviz as sv
-
+import tempfile
 
 original_stdout = sys.stdout
 sys.stdout = open('temp_stdout.txt', 'w')
