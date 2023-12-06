@@ -192,8 +192,7 @@ if auth_status == True:
         channel_data=pd.read_excel("Channel_wise_imp_click_spends_new.xlsx",sheet_name='Sheet3')
         target_column='Total Approved Accounts - Revenue'
 
-        
-        eda_columns=st.columns(3)
+  
         with eda_columns[1]:
           if st.button('Generate EDA Report'):
               def generate_report_with_target(channel_data, target_feature):
