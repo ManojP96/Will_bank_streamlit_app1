@@ -139,7 +139,7 @@ if 'Model_results' not in st.session_state:
 #if st.button('Build Model'):
 if 'iterations' not in st.session_state:
    st.session_state['iterations']=1
-save_path = r"C:\Users\ManojP\Documents\MMM\simopt\Model"
+save_path = r"Model"
 with columns[1]:
   if "final_selection" in st.session_state:
     st.write(f'Total combinations created {format_numbers(len(st.session_state["final_selection"]))}')
