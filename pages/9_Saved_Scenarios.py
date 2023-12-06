@@ -240,7 +240,7 @@ if auth_status == True:
         'selector' : 'tr:nth-child(even)',
         'props' : [('background-color', '#15C39A4D')]
         }
-        ]).hide_index().to_html(),unsafe_allow_html=True)
+        ]).to_html(),unsafe_allow_html=True)
         
 elif auth_status == False:
     st.error('Username/Password is incorrect')
