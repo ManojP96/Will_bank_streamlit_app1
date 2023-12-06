@@ -275,24 +275,24 @@ if auth_status == True:
         channel_data=pd.read_excel("Channel_wise_imp_click_spends_new.xlsx",sheet_name='Sheet3')
         target_column='Total Approved Accounts - Revenue'
         with eda_columns[1]:
-        if st.button('Generate EDA Report'):
-            def generate_report_with_target(channel_data, target_feature):
-                report = sv.analyze([channel_data, "Dataset"], target_feat=target_feature)
-                temp_dir = tempfile.mkdtemp()
-                report_path = os.path.join(temp_dir, "report.html")
-                report.show_html(filepath=report_path, open_browser=False)  # Generate the report as an HTML file
-                return report_path
-        
-            report_file = generate_report_with_target(channel_data, target_column)
-        
-            # Provide a link to download the generated report
-            with open(report_file, 'rb') as f:
-                st.download_button(
-                    label="Download EDA Report",
-                    data=f.read(),
-                    file_name="report.html",
-                    mime="text/html"
-                )
+          if st.button('Generate EDA Report'):
+              def generate_report_with_target(channel_data, target_feature):
+                  report = sv.analyze([channel_data, "Dataset"], target_feat=target_feature)
+                  temp_dir = tempfile.mkdtemp()
+                  report_path = os.path.join(temp_dir, "report.html")
+                  report.show_html(filepath=report_path, open_browser=False)  # Generate the report as an HTML file
+                  return report_path
+          
+              report_file = generate_report_with_target(channel_data, target_column)
+          
+              # Provide a link to download the generated report
+              with open(report_file, 'rb') as f:
+                  st.download_button(
+                      label="Download EDA Report",
+                      data=f.read(),
+                      file_name="report.html",
+                      mime="text/html"
+                  )
 
 
         st.title('Analysis of Result')
