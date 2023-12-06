@@ -55,7 +55,8 @@ auth_status = st.session_state.get('authentication_status')
 if auth_status == True:
     is_state_initiaized = st.session_state.get('initialized',False)
     if not is_state_initiaized:
-        print('yes')
+        initialize_data()
+      
 
     def plot_residual_predicted(actual, predicted, df_):
             df_['Residuals'] = actual - pd.Series(predicted)
