@@ -205,14 +205,16 @@ if auth_status == True:
           
               report_file = generate_report_with_target(channel_data, target_column)
           
-              # Provide a link to download the generated report
-              with open(report_file, 'rb') as f:
-                  st.download_button(
-                      label="Download EDA Report",
-                      data=f.read(),
-                      file_name="report.html",
-                      mime="text/html"
-                  )
+              if os.path.exists(report_file):
+                  with open(report_file, 'rb') as f:
+                      st.download_button(
+                          label="Download EDA Report",
+                          data=f.read(),
+                          file_name="report.html",
+                          mime="text/html"
+                      )
+              else:
+                  st.warning("Report generation failed. Unable to find the report file.")
 
 
         st.title('Analysis of Result')
